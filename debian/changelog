@@ -1,3 +1,10 @@
+hamonikr-guest-sseion (1.0.1) jin; urgency=medium
+
+  * Release for HamoniKR 4.0
+  * Fixed bug in usr/bin/set_quota.sh (sed error)
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 21 Jun 2021 20:27:52 +0900
+
 hamonikr-guest-sseion (1.0.0) jin; urgency=medium
 
   * Release for HamoniKR 3.0 SUN
