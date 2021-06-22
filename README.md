@@ -11,17 +11,12 @@
 
 게스트 사용자의 디스크 용량 제한(Quota) 적용하기 위해 다음과 같이 실행하세요. 
 
-1) `/usr/bin/set_quota.sh` 파일에서 용량을 제한하고 싶은 크기를 수정합니다.
+1) sudo 권한으로 `/usr/bin/set_quota.sh` 실행합니다.
 ```
-sudo vi /usr/bin/set_quota.sh
+# 쿼터를 설정하고 싶은 GB 단위로 파라미터를 입력
+# 10G 용량제한을 하고 싶은 경우 아래와 같이 실행
 
-# 10GB quota 를 설정하고 싶은 경우에는 아래와 같이 수정
-QTSIZE="10" 
-```
-
-2) sudo 권한으로 `/usr/bin/set_quota.sh` 실행합니다.
-```
-sudo /usr/bin/set_quota.sh
+sudo /usr/bin/set_quota.sh 10
 ```
 
-3) 설정이 적용될 수 있도록 시스템을 `재시작` 합니다.
+2) 설정이 적용될 수 있도록 시스템을 `재시작` 합니다.

@@ -9,12 +9,24 @@
 GRP="sgbgroup"
 QTSIZE="5" # quota limit 5GB 
 
+if [ -z "$1" ]; then
+    QTLIMIT="${QTSIZE}"
+else
+    # Check number type
+    if [[ "$1" -eq "$1" ]]; then
+        QTLIMIT="$1"
+    else
+        echo "Only number type allowed. Check your parameter."
+        exit 1
+    fi
+fi
+
 # create virtual folder for quota
 if [ ! -d "/var/tmp/virtual_disks" ]; then
     echo "create virtual folder for quota..."
     sudo mkdir /var/tmp/virtual_disks
     sudo touch /var/tmp/virtual_disks/directory_with_size_limit.ext4
-    sudo dd if=/dev/zero of=/var/tmp/virtual_disks/directory_with_size_limit.ext4 bs=1G count=${QTSIZE}
+    sudo dd if=/dev/zero of=/var/tmp/virtual_disks/directory_with_size_limit.ext4 bs=1G count=${QTLIMIT}
     sudo mkfs.ext4 /var/tmp/virtual_disks/directory_with_size_limit.ext4
 fi
 
