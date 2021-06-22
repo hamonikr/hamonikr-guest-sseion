@@ -28,6 +28,10 @@ if [ ! -d "/var/tmp/virtual_disks" ]; then
     sudo touch /var/tmp/virtual_disks/directory_with_size_limit.ext4
     sudo dd if=/dev/zero of=/var/tmp/virtual_disks/directory_with_size_limit.ext4 bs=1G count=${QTLIMIT}
     sudo mkfs.ext4 /var/tmp/virtual_disks/directory_with_size_limit.ext4
+else
+    echo "Already exist folder : /var/tmp/virtual_disks"    
+    echo "You must be delete here."            
+    exit
 fi
 
 # setting folder for guest session
@@ -40,6 +44,10 @@ if [ ! -d "/var/tmp/guest-data" ]; then
     sudo chmod 2775 /var/tmp/guest-data
 
     sudo quotacheck -cug /var/tmp/guest-data    
+else
+    echo "Already exist folder : /var/tmp/guest-data"    
+    echo "You must be delete here."            
+    exit    
 fi
 
 # update /etc/fstab
