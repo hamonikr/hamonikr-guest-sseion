@@ -1,3 +1,9 @@
+hamonikr-guest-sseion (1.0.2) jin; urgency=medium
+
+  * Change for set quota with parameter
+
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 22 Jun 2021 10:27:07 +0900
+
 hamonikr-guest-sseion (1.0.1) jin; urgency=medium
 
   * Release for HamoniKR 4.0
